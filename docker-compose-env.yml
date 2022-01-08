@@ -6,7 +6,8 @@ services:
     environment:
       - POSTGRESQL__DSN=postgres://chirpstack_ns:chirpstack_ns@postgresql/chirpstack_ns?sslmode=disable
       - REDIS__URL=redis://redis:6379
-      - NETWORK_SERVER__BAND__NAME=EU868
+      #- NETWORK_SERVER__BAND__NAME=EU868
+      - NETWORK_SERVER__BAND__NAME="AU915"
       - NETWORK_SERVER__GATEWAY__BACKEND__MQTT__SERVER=tcp://mosquitto:1883
       - JOIN_SERVER__DEFAULT__SERVER=http://chirpstack-application-server:8003
     depends_on:
@@ -49,7 +50,7 @@ services:
       - redisdata:/data
 
   mosquitto:
-    image: eclipse-mosquitto:1.6
+    image: eclipse-mosquitto:2
     ports:
       - 1883:1883
 
