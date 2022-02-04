@@ -1,10 +1,6 @@
-## Mantener la sesión ssh activa
-<https://www.howtogeek.com/howto/linux/keep-your-linux-ssh-session-from-disconnecting/>
-
 # Semtech Packet Forwarder
 
-## global\_conf.json para AU915 en TTN
-
+#### global\_conf.json para AU915 en TTN
 <https://github.com/TheThingsNetwork/gateway-conf/blob/master/AU-global_conf.json>
 
 # Network Server / Aplication Server 
@@ -29,3 +25,24 @@ docker-compose.yml
 ```bash
 sudo docker-compose logs -f
 ```
+
+
+# SSH
+
+#### Mantener la sesión ssh activa
+<https://www.howtogeek.com/howto/linux/keep-your-linux-ssh-session-from-disconnecting/>
+
+#### copiar un archivo local a un servidor/pc remota: [Fuente]:<https://geekytheory.com/copiar-archivos-a-traves-de-ssh-con-scp/>.
+```bash
+$ scp archivo.txt usuario@dominio.com:/home/usuario
+```
+
+# VIM
+
+#### Como comentar multiples lineas: [Fuente](https://muylinux.xyz/como-comentar-varias-lineas-al-mismo-tiempo-en-el-editor-de-vim/#:~:text=Para%20hacer%20esto%2C%20vaya%20a,otras%20l%C3%ADneas%20una%20por%20una.>)
+```vim
+:1,4s/^/#  "Este comando comenta las líneas 1 a 4 (agrega # al ppio)
+```
+
+#### Aprender Vim en español:
+<https://victorhckinthefreeworld.com/aprender-vim/>
