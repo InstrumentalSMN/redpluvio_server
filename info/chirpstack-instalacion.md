@@ -25,15 +25,30 @@ docker-compose up
 ```
 
 > Atención!
-> Si tenías corriendo mosquitto (broker)
-> desactivalo antes con:
+> Si no descarga los contenedores desde docker 
+> agregarlo en el siguiente archivo:
 ```sh
-sudo systemctl stop mosquitto
+vim /etc/systemd/system/docker.service.d/
+```
+> agregando las lineas:
+```sh
+[Service]
+Environment="HTTP_PROXY=http://proxy-do.smn.gov.ar:8080/"
+
+[Service]
+Environment="HTTPS_PROXY=http://proxy-do.smn.gov.ar:8080/"
 ```
 
 - para comprobar que esté corriendo acceder desde:
 <http://localhost:8080/>
 - más documentación en [brocaar/chirpstack-docker]
+
+> Atención!
+> Si tenías corriendo mosquitto (broker)
+> desactivalo antes con:
+```sh
+sudo systemctl stop mosquitto
+```
 
 
 

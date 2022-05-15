@@ -42,7 +42,28 @@ $ scp archivo.txt usuario@dominio.com:/home/usuario
 #### Como comentar multiples lineas: [Fuente](https://muylinux.xyz/como-comentar-varias-lineas-al-mismo-tiempo-en-el-editor-de-vim/#:~:text=Para%20hacer%20esto%2C%20vaya%20a,otras%20l%C3%ADneas%20una%20por%20una.>)
 ```vim
 :1,4s/^/#  "Este comando comenta las líneas 1 a 4 (agrega # al ppio)
-```
+
 
 #### Aprender Vim en español:
 <https://victorhckinthefreeworld.com/aprender-vim/>
+
+
+# AnyDesk
+
+Se siguió este tuto para instalación en Ubuntu pero con algunas modificaciones.
+En vez de instalar como superusuario se instaló con comando sudo y la para el
+segundo comando se agregó linea: 
+deb http://deb.anydesk.com/ all main
+directamente en el archivo:
+/etc/apt/sources.list.d/anydesk-stable.list
+
+```bash
+sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+
+echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+
+sudo apt-get update
+
+sudo apt install anydesk
+
+```
